@@ -47,6 +47,7 @@ namespace ProcessWatcher {
 
     static IHostBuilder CreateHost(string[] args) {
       return Host.CreateDefaultBuilder(args)
+        .UseContentRoot(Environment.CurrentDirectory)
         .ConfigureServices((ctx, services) => {
           services.AddOptions();
           services.AddSingleton(ctx.Configuration.GetSection(nameof(ProcessCfgCollection)).Get<ProcessCfgCollection>());

@@ -57,11 +57,17 @@
 
   }
 
+  public class ProcessWindowCfg {
+    public bool HasWinodw { get; set; }
+    public ProcessWindowStyle WindowStyle { get; set; }
+  }
+
   public class ProcessCfg : IComparable<ProcessCfg>, IComparer<ProcessCfg> {
+    public ProcessWindowCfg WindowCfg { get; set; } = new ProcessWindowCfg { HasWinodw = false, };
     public string Name { get; set; }
     public string StartUpPath { get; set; }
     public string StartUpCommandArgs { get; set; }
-    public string _StartUpDirectory;
+    private string _StartUpDirectory;
     public string StartUpDirectory { get => _StartUpDirectory ?? Path.GetDirectoryName(StartUpPath); set => _StartUpDirectory = value; }
     public bool Enable { get; set; } = true;
     public bool StartupAutomaticalyOnDaemonStart { get; set; }
@@ -128,6 +134,9 @@
       AttachedProcess = Process.Start(
         new ProcessStartInfo(_Cfg.StartUpPath, _Cfg.StartUpCommandArgs) {
           WorkingDirectory = _Cfg.StartUpDirectory,
+          WindowStyle = _Cfg.WindowCfg.WindowStyle,
+          CreateNoWindow = !_Cfg.WindowCfg.HasWinodw,
+          UseShellExecute = _Cfg.WindowCfg.HasWinodw,
         });
       RegisterExitEvent();
     }

@@ -10,7 +10,8 @@ namespace ProcessWatcher {
   public class Worker : BackgroundService {
     private readonly ILogger<Worker> _logger;
     private readonly DaemonCore _Core;
-    public Worker(DaemonCore Core) {
+    public Worker(DaemonCore Core,ILogger<Worker> Logger) {
+      _logger = Logger;
       _Core = Core;
     }
 
