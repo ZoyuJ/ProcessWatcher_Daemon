@@ -3,9 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessWatcher", "ProcessWatcher\ProcessWatcher.csproj", "{924E3A2E-7DDE-4953-832B-B880D12B3A00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessWatcher", "ProcessWatcher\ProcessWatcher.csproj", "{924E3A2E-7DDE-4953-832B-B880D12B3A00}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DaemonCommon", "DaemonCommon\DaemonCommon.shproj", "{D11C3AA6-1344-491D-8E5D-B44B1B753098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessWatcher.Framework", "ProcessWatcher.Framework\ProcessWatcher.Framework.csproj", "{7C874918-CA48-4314-9101-BA4669A18293}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DaemonCommon\DaemonCommon.projitems*{7c874918-ca48-4314-9101-ba4669a18293}*SharedItemsImports = 4
+		DaemonCommon\DaemonCommon.projitems*{924e3a2e-7dde-4953-832b-b880d12b3a00}*SharedItemsImports = 5
+		DaemonCommon\DaemonCommon.projitems*{d11c3aa6-1344-491d-8e5d-b44b1b753098}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -15,6 +24,10 @@ Global
 		{924E3A2E-7DDE-4953-832B-B880D12B3A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{924E3A2E-7DDE-4953-832B-B880D12B3A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{924E3A2E-7DDE-4953-832B-B880D12B3A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C874918-CA48-4314-9101-BA4669A18293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C874918-CA48-4314-9101-BA4669A18293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C874918-CA48-4314-9101-BA4669A18293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C874918-CA48-4314-9101-BA4669A18293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

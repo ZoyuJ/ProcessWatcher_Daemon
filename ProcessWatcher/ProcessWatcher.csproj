@@ -11,4 +11,6 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Management" Version="5.0.0" />
   </ItemGroup>
+
+  <Import Project="..\DaemonCommon\DaemonCommon.projitems" Label="Shared" />
 </Project>

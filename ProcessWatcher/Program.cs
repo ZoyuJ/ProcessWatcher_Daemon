@@ -35,6 +35,7 @@ namespace ProcessWatcher {
         .ConfigureServices((ctx, services) => {
           services.AddOptions();
           services.AddSingleton(ctx.Configuration.GetSection(nameof(ProcessCfgCollection)).Get<ProcessCfgCollection>());
+          services.AddSingleton<DaemonCore>();
           services.AddSingleton<IHostedService, Worker>();
         })
         .ConfigureLogging((ctx, logging) => {
@@ -49,6 +50,7 @@ namespace ProcessWatcher {
         .ConfigureServices((ctx, services) => {
           services.AddOptions();
           services.AddSingleton(ctx.Configuration.GetSection(nameof(ProcessCfgCollection)).Get<ProcessCfgCollection>());
+          services.AddSingleton<DaemonCore>();
           services.AddSingleton<IHostedService, Worker>();
         })
         .ConfigureLogging((ctx, logging) => {
